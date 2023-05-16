@@ -13,9 +13,9 @@ http.createServer(function (req, res) {
         simaddmod.add(req, res, q.query)
     else
         fs.readFile(filename, function (err, data) {
-            res.writeHead(404, { 'Content-Type': 'text/html' });
+            
             if (err) {
-
+                res.writeHead(404, { 'Content-Type': 'text/html' });
                 return res.end("404 Not Found");
             }
             res.writeHead(200); // Content Type not included
